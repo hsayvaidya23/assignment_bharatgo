@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Custom utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Tailwind customizations */
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-black text-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors;
+  }
+
+  .input-field {
+    @apply w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-black;
+  }
+}
